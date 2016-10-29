@@ -1,3 +1,4 @@
+export default `
 #ifdef TANGRAM_VERTEX_SHADER
 
 // Vertex position in model space: [0, 1] range over the local tile
@@ -58,3 +59,4 @@ vec3 worldNormal() {
 }
 
 #endif
+`;

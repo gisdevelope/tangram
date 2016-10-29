@@ -1,3 +1,4 @@
+export default `
 // Uniforms defining raster textures and macros for accessing them
 
 #ifdef TANGRAM_FRAGMENT_SHADER
@@ -34,3 +35,4 @@ uniform vec3 u_raster_offsets[TANGRAM_NUM_RASTER_SOURCES];  // raster tile textu
     (u_raster_sizes[raster_index])
 
 #endif
+`;

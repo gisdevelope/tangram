@@ -1,3 +1,4 @@
+export default `
 // Fragment shader for feature selection passes
 // Renders in silhouette according to selection (picking) color, or black if none defined
 
@@ -12,3 +13,4 @@ void main (void) {
         gl_FragColor = vec4(0., 0., 0., 1.);
     #endif
 }
+`;

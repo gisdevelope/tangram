@@ -1,3 +1,4 @@
+export default `
 /*
 
 Defines globals:
@@ -80,14 +81,24 @@ vec4 light_accumulator_diffuse = vec4(vec3(0.0), 1.);
 
 #ifdef TANGRAM_MATERIAL_TEXTURE_SPHEREMAP
 vec4 getSphereMap (in sampler2D _tex, in vec3 _eyeToPoint, in vec3 _normal, in vec2 _skew) {
+    // Normalized vector from camera to surface
     vec3 eye = normalize(_eyeToPoint);
+
+    // Skew
     eye.xy -= _skew;
     eye = normalize(eye);
 
+    // Reflection of eye off of surface normal
     vec3 r = reflect(eye, _normal);
+
+    // Map reflected vector onto the surface of a sphere
     r.z += 1.0;
     float m = 2. * length(r);
+
+    // Adjust xy to account for spherical shape, and center in middle of texture
     vec2 uv = r.xy / m + .5;
+
+    // Sample the environment map
     return texture2D(_tex, uv);
 }
 #endif
@@ -221,3 +232,4 @@ void calculateMaterial (in vec3 _eyeToPoint, inout vec3 _normal) {
         #endif
     #endif
 }
+`;

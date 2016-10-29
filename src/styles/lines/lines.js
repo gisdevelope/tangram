@@ -9,9 +9,12 @@ import VertexLayout from '../../gl/vertex_layout';
 import {buildPolylines} from '../../builders/polylines';
 import renderDashArray from './dasharray';
 import Geo from '../../geo';
+
 import WorkerBroker from '../../utils/worker_broker';
 import hashString from '../../utils/hash';
-import {shaderSrc_polygonsVertex, shaderSrc_polygonsFragment} from '../polygons/polygons';
+
+import shaderSrc_polygonsVertex from '../polygons/polygons_vertex';
+import shaderSrc_polygonsFragment from '../polygons/polygons_fragment';
 
 export const Lines = Object.create(Style);
 

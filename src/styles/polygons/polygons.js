@@ -7,9 +7,8 @@ import VertexLayout from '../../gl/vertex_layout';
 import {buildPolygons, buildExtrudedPolygons} from '../../builders/polygons';
 import Geo from '../../geo';
 
-let fs = require('fs');
-export const shaderSrc_polygonsVertex = fs.readFileSync(__dirname + '/polygons_vertex.glsl', 'utf8');
-export const shaderSrc_polygonsFragment = fs.readFileSync(__dirname + '/polygons_fragment.glsl', 'utf8');
+import shaderSrc_polygonsVertex from './polygons_vertex';
+import shaderSrc_polygonsFragment from './polygons_fragment';
 
 export const Polygons = Object.create(Style);
 

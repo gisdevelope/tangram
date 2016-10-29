@@ -1,3 +1,4 @@
+export default `
 /*
 
 Expected globals:
@@ -33,3 +34,4 @@ void calculateLight(in DirectionalLight _light, in vec3 _eyeToPoint, in vec3 _no
         light_accumulator_specular.rgb += _light.specular * pf;
     #endif
 }
+`;
